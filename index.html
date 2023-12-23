@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tidy HTML Demo - Home</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="./css/vendors/aos.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    
+        
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+      
+</head>
+<style>
+body{
+    font-family:'Times New Roman', Times, serif
+}
+</style>
+<body class="font-inter antialiased bg-white text-slate-800 tracking-tight">
+
+    <!-- Page wrapper -->
+    <div class="flex flex-col min-h-screen overflow-hidden">
+
+        <!-- Site header -->
+        <header class="absolute w-full z-30 dark">
+            <div class="max-w-6xl mx-auto px-5 sm:px-6">
+                <div class="flex items-center justify-between h-16 md:h-20">
+
+                    
+
+                    <!-- Desktop navigation -->
+                    <nav class="hidden md:flex md:grow">
+
+                        <!-- Desktop menu links -->
+                        <ul class="flex grow justify-start flex-wrap items-center">
+                            <li>
+                            <a href="index.html">
+                                <img alt="MCRY" src="logo_red.png" width="140" height="85">
+                            </a>
+                            </li>
+                            <li>
+                                <a class="font-semibold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a class="font-semibold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="about.html">About Us</a>
+                            </li>
+                            <li>
+                                <a class="font-semibold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="blog.html">Product Categories</a>
+                            </li>
+                            <li>
+                                <a class="font-semibold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="products.html">Products</a>
+                            </li>
+                            <li>
+                                <a class="font-semibold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="contact.html">Contact Us</a>
+                            </li>
+                            <!-- 1st level: hover -->
+                            <li
+                                class="relative"
+                                x-data="{ open: false }"
+                                @mouseenter="open = true"
+                                @mouseleave="open = false"
+                            >
+                                <a
+                                    class="font-medium text-slate-800 dark:text-slate-400 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                                    href="#0"
+                                    aria-haspopup="true"
+                                    :aria-expanded="open"
+                                    @focus="open = true"
+                                    @focusout="open = false"
+                                    @click.prevent
+                                >
+                                    
+                                </a>
+                                <!-- 2nd level: hover -->
+                                <ul
+                                    class="origin-top-right absolute top-full right-0 w-40 bg-white py-2 ml-4 rounded shadow-lg"
+                                    x-show="open"
+                                    x-transition:enter="transition ease-out duration-200 transform"
+                                    x-transition:enter-start="opacity-0 -translate-y-2"
+                                    x-transition:enter-end="opacity-100 translate-y-0"
+                                    x-transition:leave="transition ease-out duration-200"
+                                    x-transition:leave-start="opacity-100"
+                                    x-transition:leave-end="opacity-0"
+                                    x-cloak
+                                >
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- Desktop sign in links -->
+                        
+
+                    </nav>
+                    
+                    <!-- Mobile menu -->
+                    <div class="flex md:hidden" x-data="{ expanded: false }">
+
+                        <!-- Hamburger button -->
+                        <button
+                            class="hamburger"
+                            :class="{ 'active': expanded }"
+                            @click.stop="expanded = !expanded"
+                            aria-controls="mobile-nav"
+                            :aria-expanded="expanded"
+                        >
+                            <span class="sr-only">Menu</span>
+                            <svg class="w-6 h-6 fill-current text-slate-900 dark:text-slate-100" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="4" width="24" height="2" />
+                                <rect y="11" width="24" height="2" />
+                                <rect y="18" width="24" height="2" />
+                            </svg>
+                        </button>
+
+                        <!-- Mobile navigation -->
+                        <nav
+                            id="mobile-nav"
+                            class="absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll no-scrollbar bg-white"
+                            @click.away="expanded = false"
+                            @keydown.escape.window="expanded = false"
+                            x-show="expanded"
+                            x-transition:enter="transition ease-out duration-200 transform"
+                            x-transition:enter-start="opacity-0 -translate-y-2"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-out duration-200"
+                            x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0"                    
+                            x-cloak
+                        >
+                            <ul class="px-5 py-2">
+                                <li>
+                                    <a class="font-bold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a class="font-bold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="about.html">About Us</a>
+                                </li>
+                                <li>
+                                    <a class="font-bold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="blog.html">Product Categories</a>
+                                </li>
+                                <li>
+                                    <a class="font-bold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="products.html">Products</a>
+                                </li>
+                                <li>
+                                    <a class="font-bold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="contact.html">Contact Us</a>
+                                </li>
+                                
+                                
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- Page content -->
+        <main class="grow">
+            
+            <!-- Hero -->
+            <section class="relative">
+
+                <!-- Dark background -->
+                <div class="absolute inset-0 bg-slate-300 pointer-events-none -z-10 [clip-path:polygon(0_0,_5760px_0,_5760px_calc(100%_-_352px),_0_100%)]" aria-hidden="true"></div>
+
+                <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+                    <div class="pt-32 pb-20 md:pt-40 md:pb-44">
+
+                        <!-- Hero content -->
+                        <div class="max-w-xl mx-auto md:max-w-none md:flex md:items-center md:space-x-8 lg:space-x-16 xl:space-x-20 space-y-16 md:space-y-0">
+
+                            <!-- Content -->
+                            <div class="text-center md:text-left md:min-w-[30rem]" data-aos="fade-right">
+                                <h1 class="h1 font-playfair-display text-slate-900 mb-4">Quality is the best Business plan</h1>
+                                <br />
+                                <div class="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                                    
+                                    <div>
+                                        <a class="btn text-white bg-slate-700 hover:bg-slate-800 w-full" href="Products.html">Explore Product</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                       
+                                
+                                    <div class="relative">                                        
+                                        <img src="JDI_logo.png" alt="JDI logo" width="600" height="700">
+                                    </div>       
+                                
+
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+            </section>
+            <section>
+                <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                    <div class="py-12 md:py-20">
+                        <h3 class="h2 font-playfair-display mb-2">Why MCRY / Jay Dwarkadhish Industries?</h3>
+                        <br /> 
+                        <br />
+                        <!-- Items -->
+                        <div class="relative max-w-sm mx-auto grid gap-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-y-20 items-start md:max-w-2xl lg:max-w-none" data-aos-id-blocks>
+
+                            <!-- Lines decoration -->
+                            <div class="absolute inset-0 -my-8 md:-my-12 pointer-events-none hidden md:flex" aria-hidden="true">
+                                <div class="h-full w-full border-l last:border-r odd:hidden lg:odd:block border-slate-100"></div>
+                                <div class="h-full w-full border-l last:border-r odd:hidden lg:odd:block border-slate-100"></div>
+                                <div class="h-full w-full border-l last:border-r odd:hidden lg:odd:block border-slate-100"></div>
+                                <div class="h-full w-full border-l last:border-r odd:hidden lg:odd:block border-slate-100"></div>
+                            </div>
+
+                            <!-- 1st item -->
+                            <div class="relative" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
+                                <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <filter x="-17.5%" y="-10.4%" width="135%" height="129.2%" filterUnits="objectBoundingBox" id="fb1-a">
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
+                                            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                                            <feColorMatrix values="0 0 0 0 0.062745098 0 0 0 0 0.11372549 0 0 0 0 0.176470588 0 0 0 0.12 0" in="shadowBlurOuter1" />
+                                        </filter>
+                                        <filter x="-43.8%" y="-31.2%" width="187.5%" height="187.5%" filterUnits="objectBoundingBox" id="fb1-d">
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
+                                            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                                            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1" />
+                                            <feColorMatrix values="0 0 0 0 0.062745098 0 0 0 0 0.11372549 0 0 0 0 0.176470588 0 0 0 0.12 0" in="shadowBlurOuter1" />
+                                        </filter>
+                                        <path d="M35 20H24a1 1 0 00-1 1v22a1 1 0 001 1h18a1 1 0 001-1V28h-8v-8z" id="fb1-b" />
+                                        <path id="fb1-e" d="M35 20v8h8z" />
+                                        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="fb1-c">
+                                            <stop stop-color="#FFF" offset="0%" />
+                                            <stop stop-color="#E2EEFF" offset="100%" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect class="fill-current text-blue-600" width="64" height="64" rx="32" />
+                                    <use fill="#000" filter="url(#fb1-a)" xlink:href="#fb1-b" />
+                                    <use fill="url(#fb1-c)" xlink:href="#fb1-b" />
+                                    <use fill="#000" filter="url(#fb1-d)" xlink:href="#fb1-e" />
+                                    <use fill-opacity=".64" fill="#E2EEFF" xlink:href="#fb1-e" />
+                                </svg>
+                                <h3 class="h4 font-playfair-display mb-2"> Runs across Wide Range of Voltage : 
+                                </h3>
+                                <p class="font-semibold text-lg text-slate-500">Our pumps have been designed keeping in mind the power fluctuations faced by our customers. Our pumps can function from 160V to 250V .
+                                </p>
+                                
+                            </div>
+
+                            <!-- 2nd item -->
+                            <div class="relative" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]" data-aos-delay="100">
+                                <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <filter x="-12.1%" y="-13.2%" width="124.1%" height="136.8%" filterUnits="objectBoundingBox" id="fb2-a">
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
+                                            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                                            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1" />
+                                            <feColorMatrix values="0 0 0 0 0.062745098 0 0 0 0 0.11372549 0 0 0 0 0.176470588 0 0 0 0.12 0" in="shadowBlurOuter1" />
+                                        </filter>
+                                        <filter x="-12.1%" y="-13.2%" width="124.1%" height="136.8%" filterUnits="objectBoundingBox" id="fb2-c">
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
+                                            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                                            <feColorMatrix values="0 0 0 0 0.062745098 0 0 0 0 0.11372549 0 0 0 0 0.176470588 0 0 0 0.12 0" in="shadowBlurOuter1" />
+                                        </filter>
+                                        <path d="M46 23H19c-.552 0-1 .424-1 .947v17.106c0 .523.448.947 1 .947h27c.552 0 1-.424 1-.947V23.947c0-.523-.448-.947-1-.947z" id="fb2-b" />
+                                        <path d="M46 23H19c-.552 0-1 .424-1 .947v17.106c0 .523.448.947 1 .947h27c.552 0 1-.424 1-.947V23.947c0-.523-.448-.947-1-.947z" id="fb2-d" />
+                                        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="fb2-e">
+                                            <stop stop-color="#FFF" offset="0%" />
+                                            <stop stop-color="#E2EEFF" offset="100%" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect class="fill-current text-blue-600" width="64" height="64" rx="32" />
+                                    <g transform="rotate(25 32.5 32.5)">
+                                        <use fill="#000" filter="url(#fb2-a)" xlink:href="#fb2-b" />
+                                        <use fill-opacity=".64" fill="#E2EEFF" xlink:href="#fb2-b" />
+                                    </g>
+                                    <g>
+                                        <use fill="#000" filter="url(#fb2-c)" xlink:href="#fb2-d" />
+                                        <use fill="url(#fb2-e)" xlink:href="#fb2-d" />
+                                    </g>
+                                    <path d="M32.5 36a3.5 3.5 0 110-7 3.5 3.5 0 010 7z" fill-opacity=".64" fill="#5091EE" />
+                                </svg>
+                                <h3 class="h4 font-playfair-display mb-2">Energy Efficient : 
+                                </h3>
+                                <p class="font-semibold text-lg text-slate-500">We abide by the idea of making India energy and cost efficient. Our pumps put minimal load on the electric supply.
+                                </p>
+                            </div>
+
+                            <!-- 3rd item -->
+                            <div class="relative" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]" data-aos-delay="200">
+                                <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <filter x="-58.3%" y="-17.9%" width="216.7%" height="150%" filterUnits="objectBoundingBox" id="fb3-a">
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
+                                            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                                            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1" />
+                                            <feColorMatrix values="0 0 0 0 0.062745098 0 0 0 0 0.11372549 0 0 0 0 0.176470588 0 0 0 0.12 0" in="shadowBlurOuter1" />
+                                        </filter>
+                                        <filter x="-19.4%" y="-10.9%" width="138.9%" height="130.4%" filterUnits="objectBoundingBox" id="fb3-c">
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
+                                            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                                            <feColorMatrix values="0 0 0 0 0.062745098 0 0 0 0 0.11372549 0 0 0 0 0.176470588 0 0 0 0.12 0" in="shadowBlurOuter1" />
+                                        </filter>
+                                        <path d="M27 29h-4a1 1 0 00-1 1v12a1 1 0 001 1h5V30a1 1 0 00-1-1z" id="fb3-b" />
+                                        <path d="M43.882 28.133A2.986 2.986 0 0043 28h-6v-3c0-3.824-2.589-4.942-3.958-5A1 1 0 0032 21v4.638l-4 4.8V43h12.23a2.985 2.985 0 002.87-2.118l2.769-9a3 3 0 00-1.987-3.749z" id="fb3-d" />
+                                        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="fb3-e">
+                                            <stop stop-color="#FFF" offset="0%" />
+                                            <stop stop-color="#E2EEFF" offset="100%" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect class="fill-current text-blue-600" width="64" height="64" rx="32" />
+                                    <use fill="#000" filter="url(#fb3-a)" xlink:href="#fb3-b" />
+                                    <use fill-opacity=".64" fill="#E2EEFF" xlink:href="#fb3-b" />
+                                    <use fill="#000" filter="url(#fb3-c)" xlink:href="#fb3-d" />
+                                    <use fill="url(#fb3-e)" xlink:href="#fb3-d" />
+                                </svg>
+                                <h3 class="h4 font-playfair-display mb-2">Durable and Long-lasting :
+                                </h3>
+                                <p class="font-semibold text-lg text-slate-500">All products developed by our company have maximum durability . Our products can function optimally in any adverse weather/ground conditions.
+                                </p>
+                            </div>
+
+                            <!-- 4th item -->
+                            <div class="relative" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]" data-aos-delay="300">
+                                <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <filter x="-29.2%" y="-11.5%" width="158.3%" height="132.2%" filterUnits="objectBoundingBox" id="fb4-a">
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
+                                            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                                            <feColorMatrix values="0 0 0 0 0.062745098 0 0 0 0 0.11372549 0 0 0 0 0.176470588 0 0 0 0.12 0" in="shadowBlurOuter1" />
+                                        </filter>
+                                        <filter x="-29.2%" y="-11.5%" width="158.3%" height="132.2%" filterUnits="objectBoundingBox" id="fb4-d">
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
+                                            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                                            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1" />
+                                            <feColorMatrix values="0 0 0 0 0.062745098 0 0 0 0 0.11372549 0 0 0 0 0.176470588 0 0 0 0.12 0" in="shadowBlurOuter1" />
+                                        </filter>
+                                        <path d="M32 24.691l-10.737-2.656a1.007 1.007 0 00-.87.17c-.247.19-.393.483-.393.795v17a1 1 0 00.737.965L32 43.764V24.691z" id="fb4-b" />
+                                        <path d="M43.607 22.205a1.012 1.012 0 00-.87-.17L32 24.691v19.073l11.263-2.799A1 1 0 0044 40V23c0-.312-.146-.605-.393-.795z" id="fb4-e" />
+                                        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="fb4-c">
+                                            <stop stop-color="#FFF" offset="0%" />
+                                            <stop stop-color="#E2EEFF" offset="100%" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect class="fill-current text-blue-600" width="64" height="64" rx="32" />
+                                    <use fill="#000" filter="url(#fb4-a)" xlink:href="#fb4-b" />
+                                    <use fill="url(#fb4-c)" xlink:href="#fb4-b" />
+                                    <use fill="#000" filter="url(#fb4-d)" xlink:href="#fb4-e" />
+                                    <use fill-opacity=".64" fill="#E2EEFF" xlink:href="#fb4-e" />
+                                </svg>
+                                <h3 class="h4 font-playfair-display mb-2">Conjuncture of Perfection and Permanence :
+                                </h3>
+                                <p class="font-semibold text-lg text-slate-500">Owing to our expertise in this field and the rigorous testing that undergoes after manufacturing, our products and services will guaranteed work successfully under extreme and varied conditions.
+                                </p>
+                            </div>
+
+                            <!-- 5th item -->
+                            <div class="relative" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]" data-aos-delay="400">
+                                <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <filter x="-29.2%" y="-22.7%" width="158.3%" height="163.6%" filterUnits="objectBoundingBox" id="fb5-a">
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
+                                            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                                            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1" />
+                                            <feColorMatrix values="0 0 0 0 0.062745098 0 0 0 0 0.11372549 0 0 0 0 0.176470588 0 0 0 0.12 0" in="shadowBlurOuter1" />
+                                        </filter>
+                                        <filter x="-15.9%" y="-11.4%" width="131.8%" height="131.8%" filterUnits="objectBoundingBox" id="fb5-c">
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
+                                            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                                            <feColorMatrix values="0 0 0 0 0.062745098 0 0 0 0 0.11372549 0 0 0 0 0.176470588 0 0 0 0.12 0" in="shadowBlurOuter1" />
+                                        </filter>
+                                        <path id="fb5-b" d="M26 21h12v11H26z" />
+                                        <path d="M40 21h-4v10l-4-3-4 3V21h-4a3 3 0 00-3 3v16a3 3 0 003 3h16a3 3 0 003-3V24a3 3 0 00-3-3z" id="fb5-d" />
+                                        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="fb5-e">
+                                            <stop stop-color="#FFF" offset="0%" />
+                                            <stop stop-color="#E2EEFF" offset="100%" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect class="fill-current text-blue-600" width="64" height="64" rx="32" />
+                                    <use fill="#000" filter="url(#fb5-a)" xlink:href="#fb5-b" />
+                                    <use fill-opacity=".64" fill="#E2EEFF" xlink:href="#fb5-b" />
+                                    <use fill="#000" filter="url(#fb5-c)" xlink:href="#fb5-d" />
+                                    <use fill="url(#fb5-e)" xlink:href="#fb5-d" />
+                                </svg>
+                                <h3 class="h4 font-playfair-display mb-2">High Discharge Rate and Quality Copper Rotor : 
+                                </h3>
+                                <p class="font-semibold text-lg text-slate-500">Due to multiple R&D done in this domain , our pumps assure a high discharge rate . We use high grade Copper Rotor which gives better performance and extended durablity.
+                                </p>
+                            </div>
+
+                            <!-- 6th item -->
+                            <div class="relative" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]" data-aos-delay="500">
+                                <svg class="w-16 h-16 mb-4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <filter x="-14.6%" y="-11.4%" width="129.2%" height="132%" filterUnits="objectBoundingBox" id="fb6-a">
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
+                                            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                                            <feColorMatrix values="0 0 0 0 0.062745098 0 0 0 0 0.11372549 0 0 0 0 0.176470588 0 0 0 0.12 0" in="shadowBlurOuter1" />
+                                        </filter>
+                                        <filter x="-29.2%" y="-20.8%" width="158.3%" height="158.3%" filterUnits="objectBoundingBox" id="fb6-d">
+                                            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />
+                                            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                                            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1" />
+                                            <feColorMatrix values="0 0 0 0 0.062745098 0 0 0 0 0.11372549 0 0 0 0 0.176470588 0 0 0 0.12 0" in="shadowBlurOuter1" />
+                                        </filter>
+                                        <path d="M41.95 24.051A6.957 6.957 0 0037 22a6.956 6.956 0 00-5 2.102l-.05-.051A6.957 6.957 0 0027 22c-1.87 0-3.627.729-4.95 2.051A6.948 6.948 0 0020 29c0 1.87.728 3.627 2.05 4.949l9.95 9.95 9.95-9.95A6.952 6.952 0 0044 29a6.954 6.954 0 00-2.05-4.949z" id="fb6-b" />
+                                        <path d="M36 33a6 6 0 100 12 6 6 0 000-12z" id="fb6-e" />
+                                        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="fb6-c">
+                                            <stop stop-color="#FFF" offset="0%" />
+                                            <stop stop-color="#E2EEFF" offset="100%" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect class="fill-current text-blue-600" width="64" height="64" rx="32" />
+                                    <use fill="#000" filter="url(#fb6-a)" xlink:href="#fb6-b" />
+                                    <use fill="url(#fb6-c)" xlink:href="#fb6-b" />
+                                    <use fill="#000" filter="url(#fb6-d)" xlink:href="#fb6-e" />
+                                    <use fill-opacity=".64" fill="#E2EEFF" xlink:href="#fb6-e" />
+                                </svg>
+                                <h3 class="h4 font-playfair-display mb-2">Manufactured with ISI marked Parts : 
+                                </h3>
+                                <p class="font-semibold text-lg text-slate-500">All the materials and components used in manufacturing is ISI marked . High quality parts ensure a robust end product.</p>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- Features blocks -->
+            <section>
+                <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                    <div class="py-12 md:py-20"><!-- Items -->
+                        
+                        
+                        <div class="font-semibold text-2xl">
+                       <p class="text-lg text-slate-500">MCRY pumps manufactured by Jay Dwarkadhish Industries ranks high among the fastest growing leading manufacturers in the market. We manufacture high quality, technically most advanced and excellent energy efficient pumps. Our products comprise of lifelong durable and reliable Submersible, Openwell, Monoblock for Agricultural, Domestic and Commercial markets. Our pumps are well known for their high discharge rate which ensures excellent performance and satisfies the varied needs of the customers.</p>
+                        
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Features 01 -->
+            <section class="relative">
+
+                <div class="absolute inset-0 bg-slate-300 pointer-events-none mb-64 md:mb-80" aria-hidden="true"></div>
+
+                <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+                    <div class="py-12 md:py-20">
+
+                        <!-- Section header -->
+                        <div class="max-w-3xl mx-auto text-center pb-12">
+                            <h2 class="h2 font-playfair-display text-slate-900 mb-4">Built exclusively for you</h2>
+                            
+                        </div>
+
+                        <!-- Section content -->
+                        <div class="max-w-3xl mx-auto" x-data="{ tab: '1' }">
+
+                            <!-- Tabs buttons -->
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pb-12">
+                                <button
+                                    class="text-center transition-opacity"
+                                    :class="tab === '1' || 'opacity-50 hover:opacity-75'"
+                                    @click="tab = '1'"    
+                                >
+                                    <div class="inline-flex bg-white rounded-full shadow-md mb-3">
+                                        <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill="#2174EA" d="M20 20h6v16h-6z" />
+                                            <path fill-opacity=".64" fill="#5091EE" d="M29 20h3v16h-3zM35 20h1v16h-1z" />
+                                        </svg>
+                                    </div>
+                                    <div class="md:text-lg leading-tight font-semibold text-slate-800">Our Workplace</div>
+                                </button>
+                                <button
+                                    class="text-center transition-opacity"
+                                    :class="tab === '2' || 'opacity-50 hover:opacity-75'"
+                                    @click="tab = '2'"    
+                                >
+                                    <div class="inline-flex bg-white rounded-full shadow-md mb-3">
+                                        <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-opacity=".64" fill="#5091EE" d="M33 23v8h3V20H25v3z" />
+                                            <path fill="#2174EA" d="M20 25h11v11H20z" />
+                                        </svg>
+                                    </div>
+                                    <div class="md:text-lg leading-tight font-semibold text-slate-800">Our Founders</div>
+                                </button>
+                                <button
+                                    class="text-center transition-opacity"
+                                    :class="tab === '3' || 'opacity-50 hover:opacity-75'"
+                                    @click="tab = '3'"
+                                >
+                                    <div class="inline-flex bg-white rounded-full shadow-md mb-3">
+                                        <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-opacity=".64" fill="#5091EE" d="M20 27l7-7h-7z" />
+                                            <path fill="#2174EA" d="M29 20l7 7v-7z" />
+                                            <path fill-opacity=".64" fill="#5091EE" d="M36 29l-7 7h7z" />
+                                            <path fill="#2174EA" d="M27 36l-7-7v7z" />
+                                        </svg>
+                                    </div>
+                                    <div class="md:text-lg leading-tight font-semibold text-slate-800">Our Dealers</div>
+                                </button>
+                                <button
+                                    class="text-center transition-opacity"
+                                    :class="tab === '4' || 'opacity-50 hover:opacity-75'"
+                                    @click="tab = '4'"    
+                                >
+                                    <div class="inline-flex bg-white rounded-full shadow-md mb-3">
+                                        <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M24 28h-4v4.9c0 1 .7 1.9 1.7 2.1 1.2.2 2.3-.8 2.3-2v-5z" fill-opacity=".64" fill="#5091EE" />
+                                            <path d="M35 21h-8c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H33c1.7 0 3-1.3 3-3V22c0-.6-.4-1-1-1z" fill="#2174EA" />
+                                        </svg>
+                                    </div>
+                                    <div class="md:text-lg leading-tight font-semibold text-slate-800">Our Customers</div>
+                                </button>
+                            </div>
+
+                            <!-- Tab items -->
+                            <div class="relative flex flex-col" data-aos="fade-up">
+                                <div
+                                    x-show="tab === '1'"
+                                    x-transition:enter="transition ease-in-out duration-700 order-first"
+                                    x-transition:enter-start="opacity-0 -translate-y-16"
+                                    x-transition:enter-end="opacity-100 translate-y-0"
+                                    x-transition:leave="transition ease-in-out duration-300 absolute"
+                                    x-transition:leave-start="opacity-100 translate-y-0"
+                                    x-transition:leave-end="opacity-0 translate-y-16"
+                                >                
+                                    <img class="mx-auto shadow-2xl" src="cpic1.jpg" width="768" height="474" alt="Features home 01" />
+                                </div>
+                                <div
+                                    x-show="tab === '2'"
+                                    x-transition:enter="transition ease-in-out duration-700 order-first"
+                                    x-transition:enter-start="opacity-0 -translate-y-16"
+                                    x-transition:enter-end="opacity-100 translate-y-0"
+                                    x-transition:leave="transition ease-in-out duration-300 absolute"
+                                    x-transition:leave-start="opacity-100 translate-y-0"
+                                    x-transition:leave-end="opacity-0 translate-y-16"
+                                >                
+                                    <img class="mx-auto shadow-2xl" src="dir_img.jpg" width="768" height="474" alt="Features home 02" />
+                                </div>
+                                <div
+                                    x-show="tab === '3'"
+                                    x-transition:enter="transition ease-in-out duration-700 order-first"
+                                    x-transition:enter-start="opacity-0 -translate-y-16"
+                                    x-transition:enter-end="opacity-100 translate-y-0"
+                                    x-transition:leave="transition ease-in-out duration-300 absolute"
+                                    x-transition:leave-start="opacity-100 translate-y-0"
+                                    x-transition:leave-end="opacity-0 translate-y-16"
+                                >                
+                                    <img class="mx-auto shadow-2xl" src="pipes.jpg" width="768" height="474" alt="Features home 03" />
+                                </div>
+                                <div
+                                    x-show="tab === '4'"
+                                    x-transition:enter="transition ease-in-out duration-700 order-first"
+                                    x-transition:enter-start="opacity-0 -translate-y-16"
+                                    x-transition:enter-end="opacity-100 translate-y-0"
+                                    x-transition:leave="transition ease-in-out duration-300 absolute"
+                                    x-transition:leave-start="opacity-100 translate-y-0"
+                                    x-transition:leave-end="opacity-0 translate-y-16"
+                                >                
+                                    <img class="mx-auto shadow-2xl" src="sparks.jpg" width="768" height="474" alt="Features home 04" />
+                                </div>                                                
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features 02 -->
+            <section>
+                <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                    <div class="py-12 md:py-20 border-t border-slate-200">
+
+                        <!-- Section header -->
+                        <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+                            <h2 class="h2 font-playfair-display text-slate-800">From the Board of Directors</h2>
+                        </div>
+
+                        <!-- Section content -->
+                        <div class="max-w-xl mx-auto md:max-w-none flex flex-col md:flex-row md:items-start md:space-x-8 lg:space-x-16 xl:space-x-18 space-y-8 space-y-reverse md:space-y-0" x-data="{ tab: '1' }">
+
+                            <!-- Tabs items (images) -->
+                            <div class="md:rtl md:w-5/12 lg:w-1/2 order-1 md:order-none" data-aos="fade-down">
+                                <div class="relative flex flex-col">
+                                    <!-- Item 1 -->
+                                    <div
+                                        class="w-full"
+                                        x-show="tab === '1'"
+                                        x-transition:enter="transition ease-in-out duration-700 transform order-first"
+                                        x-transition:enter-start="opacity-0 -translate-y-16"
+                                        x-transition:enter-end="opacity-100 translate-y-0"
+                                        x-transition:leave="transition ease-in-out duration-300 transform absolute"
+                                        x-transition:leave-start="opacity-100 translate-y-0"
+                                        x-transition:leave-end="opacity-0 translate-y-16"
+                                    >
+                                        <img class="md:max-w-none mx-auto rounded" src="dir_img.jpg" width="540" height="620" alt="Features home 2 01" />
+                                    </div>
+                                                                           
+                                </div>
+                            </div>                
+
+                            <!-- Content -->
+                            <div class="md:w-7/12 lg:w-1/2" data-aos="fade-up">
+                                <div class="mb-8 text-center md:text-left">
+                                    <h3 class="h3 text-slate-800 font-playfair-display mb-3">Built exclusively for you</h3>
+                                    <p class="text-justify text-xl text-slate-500" >Jay Dwarkadhish Industries have been committed towards providing the best product to it's every user since the time of our establishment and are also rated as the most trusted and reliable brand by our customers. We are the most admired and competent name amongst the dealers and customers of the submersible pumps.  We are very eager to serve you and do business with you. Please join us in this journey of ours to revolutionize the pump industry for the greater good of us all.</p>
+                                </div>
+                                <!-- Tabs buttons -->
+                                
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features 03 -->
+            <section class="relative">
+
+                <!-- Dark background -->
+                <div class="absolute inset-0 bg-slate-300 pointer-events-none -z-10 [clip-path:polygon(0_0,_5760px_0,_5760px_calc(100%_-_352px),_0_100%)] h-96 md:h-auto md:mb-64" aria-hidden="true"></div>
+
+                <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+                    <div class="py-12 md:py-20">
+
+                        <!-- Section header -->
+                        <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+                            <h2 class="h2 font-playfair-display text-slate-900">Simplify operating and manage with transparency</h2>
+                        </div>
+
+                        <!-- Section content -->
+                        <div class="max-w-sm mx-auto md:max-w-none grid gap-12 md:grid-cols-3 md:gap-x-10 md:gap-y-10 items-start">
+
+                            <!-- 1st article -->
+                            <article data-aos="fade-up">
+                                <a class="relative block group mt-8 mb-4" href="#0">
+                                    <div class="absolute inset-0 pointer-events-none border-2 border-slate-500 opacity-20 translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition duration-300 ease-out -z-10" aria-hidden="true"></div>
+                                    <div class="overflow-hidden">
+                                        <img class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700 ease-out" src="sparks.jpg" width="342" height="342" alt="News 01" />
+                                    </div>
+                                    <div class="w-16 h-16 absolute bg-gradient-to-b from-blue-500 to-blue-600 rounded-full -top-8 left-8">
+                                        <svg class="w-16 h-16 fill-current" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="text-white" d="m30.152 39.848.672-.408C32.24 33.632 33.92 32 35.96 26.768a10.714 10.714 0 0 0-.432-2.28c-.288-.096-.888-.336-1.44-.336-1.776.48-3.48 1.632-5.208 2.088-1.272.336-.576 2.352.36 3.312.672-.384 1.872-1.008 2.28-.96-1.248 2.112-3 6.12-3 7.704 0 .528-.48.816-.48 1.104 0 .288.12.6.144.936.384-.24.48-.12.48.264.264.192.672.504 1.032.816.144-.744.384-1.56.888-1.464l-.6 1.704c.072.072.12.144.168.192Z" />
+                                        </svg>
+                                    </div>
+                                </a>
+                                <h3 class="h4 font-playfair-display mb-2">
+                                    <a class="text-slate-800 hover:underline hover:decoration-blue-100" href="#0">Manufactured with precision 
+                                    </a>
+                                </h3>
+                                <p class="text-lg text-slate-500">Excellence in craftsmanship meets industry grade machinery.</p>
+                            </article>
+
+                            <!-- 2nd article -->
+                            <article data-aos="fade-up" data-aos-delay="100">
+                                <a class="relative block group mt-8 mb-4" href="#0">
+                                    <div class="absolute inset-0 pointer-events-none border-2 border-slate-500 opacity-20 translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition duration-300 ease-out -z-10" aria-hidden="true"></div>
+                                    <div class="overflow-hidden">
+                                        <img class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700 ease-out" src="pipes.jpg" width="342" height="342" alt="News 02" />
+                                    </div>
+                                    <div class="w-16 h-16 absolute bg-gradient-to-b from-blue-500 to-blue-600 rounded-full -top-8 left-8">
+                                        <svg class="w-16 h-16 fill-current" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="text-white" d="M25.508 39.044c.312 0 .672-.024 1.008-.048-.096-.432.384-.528.816-.096 1.488-.216 3.12-.624 4.416-.888l.6-.624c1.104 0 .456.624 1.44.432.168-1.008.552-.456 1.92-1.176l.072.168c-.264.192-.72.408-1.152.576v.216c1.584-.528 1.848-1.32 2.928-1.464 1.224-.168 2.184-.048 2.52-.792l-1.728-.096-.168-.24h1.008l-.096-.216c-1.032 0-1.44-.168-2.4-.576-2.016.192-5.328.912-7.632.768 1.296-1.512 3.72-2.592 5.712-3.648.024.36-.384.6-.744.816l.072.216 1.344-.744c.048-.72.552-1.344 1.272-1.44.6-.744.864-1.776.864-2.76 0-1.08-1.2-2.208-3.024-2.208l.096-.264c-1.968.192-5.4.36-6.792 1.176-.504.288-.456.696-.792.984.48.36.024.528.504 1.2.624.888.648 1.488 1.152 1.2 1.056-.576 2.4-1.176 3.384-1.176.48 0 .864.168 1.104.504 0 1.488-6.744 3.792-9.288 7.632.48.096.312.48.072.84.504.768.84 1.728 1.512 1.728Zm7.344-5.976.912-.48-.048-.264-.912.6.048.144Zm7.08 3.216-.096-.216-1.128.216c.144.168.72.048 1.224 0Z" />
+                                        </svg>
+                                    </div>
+                                </a>
+                                <h3 class="h4 font-playfair-display mb-2">
+                                    <a class="text-slate-800 hover:underline hover:decoration-blue-100" href="#0">Reliable Products</a>
+                                </h3>
+                                <p class="text-lg text-slate-500">Our pumps flaunt cost efficiency and mechanical brilliance.</p>
+                            </article>
+
+                            <!-- 3rd article -->
+                            <article data-aos="fade-up" data-aos-delay="200">
+                                <a class="relative block group mt-8 mb-4" href="#0">
+                                    <div class="absolute inset-0 pointer-events-none border-2 border-slate-500 opacity-20 translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition duration-300 ease-out -z-10" aria-hidden="true"></div>
+                                    <div class="overflow-hidden">
+                                        <img class="w-full aspect-square object-cover group-hover:scale-105 transition duration-700 ease-out" src="pipes2.jpg" width="342" height="342" alt="News 03" />
+                                    </div>
+                                    <div class="w-16 h-16 absolute bg-gradient-to-b from-blue-500 to-blue-600 rounded-full -top-8 left-8">
+                                        <svg class="w-16 h-16 fill-current" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="text-white" d="M25.53 40.038c1.607-.216 3.071-.576 4.655-1.08.048-.36.288-.6.552-.624l.12.408a37.15 37.15 0 0 0 2.352-.912l.12.264c1.416-.72 2.64-1.2 3.984-2.376l.312.144c1.392-1.248 1.632-2.904 1.632-4.728-.624-.912-1.416-1.656-2.784-2.112.36-.72.768-1.752.984-2.784-.12-.648-.408-1.224-.864-1.776-.84-.072-2.088-.24-3.264-.24l-.192-.216a18.485 18.485 0 0 0-1.152-.048c-1.776 0-4.056 1.032-4.056 1.944 0 .624.048 1.248.192 1.824l.268-.172c.578-.368 1.127-.671 1.46-.38l-1.656.792c.048.144.12.336.192.48 1.296-.672 3.96-1.608 5.64-1.608-.456.984-2.376 2.496-3.672 2.832l-.24 1.056c.456 1.248.864 1.032 2.16 1.68l.12-.288c1.8.216 3.336 0 3.96.72-.312 1.464-3.984 2.712-5.4 3.12-.504.144-.84.144-.936-.096-1.416.744-3.36.696-5.064.696-.24.768-.336 1.608.048 2.544l.72-.312c.144.288-.432.696-.456.96-.024.24.12.312.264.288Zm7.703-2.352-.144-.264.744-.312.072.216-.672.36Zm-4.344 1.248-.048-.264c.216-.048.384-.096.552-.12a.588.588 0 0 1 .48.12l-.984.264Z" />
+                                        </svg>
+                                    </div>
+                                </a>
+                                <h3 class="h4 font-playfair-display mb-2">
+                                    <a class="text-slate-800 hover:underline hover:decoration-blue-100" href="#0">Finest Components</a>
+                                </h3>
+                                <p class="text-lg text-slate-500">Industry leading components yield a robust end product.</p>
+                            </article>
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            
+            
+            <!-- Pricing -->
+            
+            
+            <!-- Cta -->
+            
+            
+        </main>
+        <div> </div>
+        <div> </div>
+        <!-- Site footer -->
+        <footer>
+            <section class="bg-slate-300">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+                <!-- Top area: Blocks -->
+                <div class="grid sm:grid-cols-12 gap-8 py-8 md:py-12">
+
+                    <!-- 1st block -->
+                    <div class="sm:col-span-12 lg:col-span-4 lg:max-w-xs">
+                        <div class="mb-2">
+                            
+                            <div class="relative">                                        
+                                <img src="JDI_logo.png" alt="JDI logo" width="250" height="300">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div></div><br><br/>
+                    <!-- 2nd block -->
+                    <div class="sm:col-span-6 md:col-span-3 lg:col-span-6">
+                        <h6 class="text-sm text-slate-800 font-semibold mb-2">Address</h6>
+                        <ul class="text-sm font-medium space-y-2">
+                            <li>
+                                <a class="text-slate-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0">Plot no. 16, Jai Dwarkadhish Industries Behind Parin Furniture, Gondal Highway, Vavdi </a>
+                            </li>
+                            <li>
+                                <a class="text-slate-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0">Rajkot, Gujarat-360004</a>
+                            </li>
+                            <li>
+                                <a class="text-slate-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0">India.</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- 3rd block -->
+                    <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
+                        <h6 class="text-sm text-slate-800 font-semibold mb-2">Contact</h6>
+                        <ul class="text-sm font-medium space-y-2">
+                            <li>
+                                <a class="text-slate-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0">jaydwarkadhish101@gmail.com</a>
+                            </li>
+                            <li>
+                                <a class="text-slate-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0">Ph: 7909999121</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <br><br/>
+                    <!-- 4th block -->
+                    
+
+                    
+
+                </div>
+
+                <!-- Bottom area -->
+                <div class="md:flex md:items-center md:justify-between py-6 md:py-8 border-t border-slate-200">
+
+                    <!-- Social links -->
+                    <ul class="flex space-x-6 mb-4 md:order-1 md:ml-4 md:mb-0">
+                        <li>
+                            <a class="text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0" aria-label="Twitter">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 3.897c-.75.33-1.5.577-2.333.66A4.4 4.4 0 0 0 19.5 2.33c-.833.495-1.667.825-2.583.99a4.053 4.053 0 0 0-3-1.32c-2.25 0-4.084 1.814-4.084 4.041 0 .33 0 .66.084.907-3.5-.164-6.5-1.814-8.5-4.288C1 3.32.833 3.98.833 4.722c0 1.402.75 2.639 1.834 3.381-.667 0-1.334-.165-1.834-.495v.083c0 1.98 1.417 3.629 3.25 3.958-.333.083-.666.165-1.083.165-.25 0-.5 0-.75-.082.5 1.65 2 2.804 3.833 2.804C4.667 15.608 2.917 16.268 1 16.268c-.333 0-.667 0-1-.082C1.833 17.34 4 18 6.25 18c7.583 0 11.667-6.186 11.667-11.546v-.495c.833-.578 1.5-1.32 2.083-2.062Z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0" aria-label="Facebook">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 10.025C20 4.491 15.52 0 10 0S0 4.491 0 10.025c0 4.852 3.44 8.892 8 9.825v-6.817H6v-3.008h2V7.52a3.508 3.508 0 0 1 3.5-3.509H14v3.008h-2c-.55 0-1 .45-1 1.002v2.005h3v3.008h-3V20c5.05-.501 9-4.772 9-9.975Z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0" aria-label="Telegram">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.96 2.336a.421.421 0 0 0-.291-.308 1.543 1.543 0 0 0-.788.054S1.358 8.194.358 8.87c-.215.145-.288.23-.324.33-.173.485.366.694.366.694l4.517 1.428a.506.506 0 0 0 .229-.013c1.026-.63 10.332-6.335 10.873-6.527.083-.024.148 0 .131.061-.215.732-8.257 7.664-8.301 7.706a.16.16 0 0 0-.06.143l-.422 4.28s-.176 1.331 1.196 0a38.082 38.082 0 0 1 2.374-2.11c1.553 1.041 3.224 2.192 3.945 2.794.245.23.576.354.916.342.426-.05.774-.35.876-.754 0 0 3.192-12.471 3.298-14.142.011-.162.025-.268.027-.38.005-.13-.008-.26-.04-.387Z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0" aria-label="Instagram">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+
+                    
+                    <div ></div>
+
+                </div>
+
+            </div>
+        </section>
+        </footer>
+
+    </div>
+
+    <script src="./js/vendors/alpinejs.min.js" defer></script>
+    <script src="./js/vendors/aos.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>

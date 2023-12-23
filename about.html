@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tidy HTML Demo - Home</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="./css/vendors/aos.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+</head>
+
+<body class="font-inter antialiased bg-white text-slate-800 tracking-tight">
+
+    <!-- Page wrapper -->
+    <div class="flex flex-col min-h-screen overflow-hidden">
+
+        <!-- Site header -->
+        <header class="absolute w-full z-30 dark">
+            <div class="max-w-6xl mx-auto px-5 sm:px-6">
+                <div class="flex items-center justify-between h-16 md:h-20">
+
+                    
+
+                    <!-- Desktop navigation -->
+                    <nav class="hidden md:flex md:grow">
+
+                        <!-- Desktop menu links -->
+                        <ul class="flex grow justify-start flex-wrap items-center">
+                            <li>
+                            <a href="index.html">
+                                <img alt="MCRY" src="logo_red.png" width="140" height="85">
+                            </a>
+                            </li>
+                            <li>
+                                <a class="font-semibold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a class="font-semibold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="about.html">About Us</a>
+                            </li>
+                            <li>
+                                <a class="font-semibold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="blog.html">Product Categories</a>
+                            </li>
+                            <li>
+                                <a class="font-semibold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="products.html">Products</a>
+                            </li>
+                            <li>
+                                <a class="font-semibold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="contact.html">Contact Us</a>
+                            </li>
+                            <!-- 1st level: hover -->
+                            <li
+                                class="relative"
+                                x-data="{ open: false }"
+                                @mouseenter="open = true"
+                                @mouseleave="open = false"
+                            >
+                                <a
+                                    class="font-medium text-slate-800 dark:text-slate-400 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                                    href="#0"
+                                    aria-haspopup="true"
+                                    :aria-expanded="open"
+                                    @focus="open = true"
+                                    @focusout="open = false"
+                                    @click.prevent
+                                >
+                                    
+                                </a>
+                                <!-- 2nd level: hover -->
+                                <ul
+                                    class="origin-top-right absolute top-full right-0 w-40 bg-white py-2 ml-4 rounded shadow-lg"
+                                    x-show="open"
+                                    x-transition:enter="transition ease-out duration-200 transform"
+                                    x-transition:enter-start="opacity-0 -translate-y-2"
+                                    x-transition:enter-end="opacity-100 translate-y-0"
+                                    x-transition:leave="transition ease-out duration-200"
+                                    x-transition:leave-start="opacity-100"
+                                    x-transition:leave-end="opacity-0"
+                                    x-cloak
+                                >
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- Desktop sign in links -->
+                        
+
+                    </nav>
+                    
+                    <!-- Mobile menu -->
+                    <div class="flex md:hidden" x-data="{ expanded: false }">
+
+                        <!-- Hamburger button -->
+                        <button
+                            class="hamburger"
+                            :class="{ 'active': expanded }"
+                            @click.stop="expanded = !expanded"
+                            aria-controls="mobile-nav"
+                            :aria-expanded="expanded"
+                        >
+                            <span class="sr-only">Menu</span>
+                            <svg class="w-6 h-6 fill-current text-slate-900 dark:text-slate-100" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="4" width="24" height="2" />
+                                <rect y="11" width="24" height="2" />
+                                <rect y="18" width="24" height="2" />
+                            </svg>
+                        </button>
+
+                        <!-- Mobile navigation -->
+                        <nav
+                            id="mobile-nav"
+                            class="absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll no-scrollbar bg-white"
+                            @click.away="expanded = false"
+                            @keydown.escape.window="expanded = false"
+                            x-show="expanded"
+                            x-transition:enter="transition ease-out duration-200 transform"
+                            x-transition:enter-start="opacity-0 -translate-y-2"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-out duration-200"
+                            x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0"                    
+                            x-cloak
+                        >
+                            <ul class="px-5 py-2">
+                                <li>
+                                    <a class="font-bold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a class="font-bold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="about.html">About Us</a>
+                                </li>
+                                <li>
+                                    <a class="font-bold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="blog.html">Product Categories</a>
+                                </li>
+                                <li>
+                                    <a class="font-bold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="products.html">Products</a>
+                                </li>
+                                <li>
+                                    <a class="font-bold text-2xl text-slate-800 hover:text-blue-600 dark:text-slate-900 dark:hover:text-blue-600 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="contact.html">Contact Us</a>
+                                </li>
+                                
+                                
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- Page content -->
+        <main class="grow">
+            
+            <!-- Hero -->
+            <section class="relative">
+
+                <!-- Dark background -->
+                <div class="absolute inset-0 bg-slate-300 pointer-events-none -z-10 mb-48 lg:mb-0 lg:h-[30rem]" aria-hidden="true">
+                    
+                </div>
+
+                <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+                    <div class="pt-32 md:pt-40">
+
+                        <!-- Section header -->
+                        <div class="max-w-3xl mx-auto text-center pb-16">
+                            <h1 class="h1 font-playfair-display text-slate-900 mb-4">We are the fastest growing Pump Industry in India.</h1>
+                        </div>
+
+                        <!-- Hero image -->
+                        <div class="flex justify-center items-center" data-aos="fade-up" data-aos-delay="100">
+                            <img class="mx-auto" src="dir_img.jpg" width="797" height="450" alt="About intro" />
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            
+            
+            <!-- Content -->
+            <section>
+                <br><br/>
+                <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                    <div class="pb-12 md:pb-20">
+
+                        <div class="max-w-3xl mx-auto">
+                            <div class="text-lg text-slate-500">
+                                <h2 class="h3 font-playfair-display text-slate-800 mb-4">Our Story</h2>
+                                <p class="mb-8">Jay Dwarkadhish Industries have been committed towards providing the best product to it's every user since the time of our establishment and are also rated as the most trusted and reliable brand by our customers. We are the most admired and competent name amongst the dealers and customers of the submersible pumps. Our manufacturing process is quite high quality and technically advanced. Alongwith been energy efficient, our expert craftsmanship ensures that our products are lifelong reliable and robust. We manufacture multiple types of pumps for Agricultural, Domestic and Commercial markets. All our products undergo multiple rigorous tests to ensure that our products function optimally for years on years. We are very eager to serve you and do business with you. Please join us in this journey of ours to revolutionize the pump industry for the greater good of us all.</p>
+                                
+                                
+                            </div>
+                        </div>
+                        <div class="max-w-3xl mx-auto">
+                            <div class="text-lg text-slate-500">
+                                <h2 class="h3 font-playfair-display text-slate-800 mb-4">Our Motto</h2>
+                                <h3 class="h4 font-playfair-display text-slate-600 mb-4">Quality / Performance / Growth
+                                </h3>
+                                <p class="mb-8">We beleive in our motto Quality /Performance /Growth that is we beleive in providing the best quality which is directly linked to the excellent performance of the pump and thus aids in the growth of both the manufacturer and the consumer .</p>
+                                
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Team -->
+            <section class="bg-slate-100">
+
+                <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                    <div class="pt-12 md:pt-20">
+                        
+                        <!-- Section header -->
+                        <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+                            <h2 class="h2 font-playfair-display text-slate-800">Vision, Mission and Core values.
+                            </h2>
+                            <br>
+                        </br>
+                            <p class="mb-8">Our directors being born and brought up among farmers, deeply understand the pain a farmer goes through during water scarcity. The vision of our directors is to manufacture and deliver the best in quality, performance pump sets in the most affordable price. We aspire to sell the best product in market and becone the industry leaders in our market segment.
+                                We will achieve this by continuous and dedicated hardwork of all our team members who are working with the main aim that is the growth of the company and the consumer.
+                            </p>
+                            
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Images container -->
+                <div class="-ml-28 -mr-28 mb-8 md:mb-16">
+                    <div class="max-w-[1652px] mx-auto flex items-center space-x-2 md:space-x-4">
+                        <div class="relative w-1/3" data-aos="fade-right">
+                            <img class="aspect-[3/2] object-cover" src="./images/team-01.jpg" width="540" height="360" alt="Team 01" />
+                            <div class="absolute inset-0 bg-gradient-to-r from-slate-100" aria-hidden="true"></div>
+                        </div>
+                        <div class="relative w-1/3" data-aos="fade">
+                            <img class="aspect-[3/2] object-cover" src="./images/team-02.jpg" width="540" height="360" alt="Team 02" />
+                        </div>
+                        <div class="relative w-1/3" data-aos="fade-left">
+                            <img class="aspect-[3/2] object-cover" src="./images/team-03.jpg" width="540" height="360" alt="Team 03" />
+                            <div class="absolute inset-0 bg-gradient-to-l from-slate-100" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </section>
+            <div> </div>
+            <!-- Site footer -->
+            <footer>
+                <section class="bg-slate-300">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    
+                    <!-- Top area: Blocks -->
+                    <div class="grid sm:grid-cols-12 gap-8 py-8 md:py-12">
+    
+                        <!-- 1st block -->
+                        <div class="sm:col-span-12 lg:col-span-4 lg:max-w-xs">
+                            <div class="mb-2">
+                                
+                                <div class="relative">                                        
+                                    <img src="JDI_logo.png" alt="JDI logo" width="250" height="300">
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div></div><br><br/>
+                        <!-- 2nd block -->
+                        <div class="sm:col-span-6 md:col-span-3 lg:col-span-6">
+                            <h6 class="text-sm text-slate-800 font-semibold mb-2">Address</h6>
+                            <ul class="text-sm font-medium space-y-2">
+                                <li>
+                                    <a class="text-slate-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0">Plot no. 16, Jai Dwarkadhish Industries Behind Parin Furniture, Gondal Highway, Vavdi </a>
+                                </li>
+                                <li>
+                                    <a class="text-slate-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0">Rajkot, Gujarat-360004</a>
+                                </li>
+                                <li>
+                                    <a class="text-slate-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0">India.</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+    
+                        <!-- 3rd block -->
+                        <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
+                            <h6 class="text-sm text-slate-800 font-semibold mb-2">Contact</h6>
+                            <ul class="text-sm font-medium space-y-2">
+                                <li>
+                                    <a class="text-slate-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0">jaydwarkadhish101@gmail.com</a>
+                                </li>
+                                <li>
+                                    <a class="text-slate-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0">Ph: 7909999121</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <br><br/>
+                        <!-- 4th block -->
+                        
+    
+                        
+    
+                    </div>
+    
+                    <!-- Bottom area -->
+                    <div class="md:flex md:items-center md:justify-between py-6 md:py-8 border-t border-slate-200">
+    
+                        <!-- Social links -->
+                        <ul class="flex space-x-6 mb-4 md:order-1 md:ml-4 md:mb-0">
+                            <li>
+                                <a class="text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0" aria-label="Twitter">
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 3.897c-.75.33-1.5.577-2.333.66A4.4 4.4 0 0 0 19.5 2.33c-.833.495-1.667.825-2.583.99a4.053 4.053 0 0 0-3-1.32c-2.25 0-4.084 1.814-4.084 4.041 0 .33 0 .66.084.907-3.5-.164-6.5-1.814-8.5-4.288C1 3.32.833 3.98.833 4.722c0 1.402.75 2.639 1.834 3.381-.667 0-1.334-.165-1.834-.495v.083c0 1.98 1.417 3.629 3.25 3.958-.333.083-.666.165-1.083.165-.25 0-.5 0-.75-.082.5 1.65 2 2.804 3.833 2.804C4.667 15.608 2.917 16.268 1 16.268c-.333 0-.667 0-1-.082C1.833 17.34 4 18 6.25 18c7.583 0 11.667-6.186 11.667-11.546v-.495c.833-.578 1.5-1.32 2.083-2.062Z" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0" aria-label="Facebook">
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 10.025C20 4.491 15.52 0 10 0S0 4.491 0 10.025c0 4.852 3.44 8.892 8 9.825v-6.817H6v-3.008h2V7.52a3.508 3.508 0 0 1 3.5-3.509H14v3.008h-2c-.55 0-1 .45-1 1.002v2.005h3v3.008h-3V20c5.05-.501 9-4.772 9-9.975Z" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0" aria-label="Telegram">
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19.96 2.336a.421.421 0 0 0-.291-.308 1.543 1.543 0 0 0-.788.054S1.358 8.194.358 8.87c-.215.145-.288.23-.324.33-.173.485.366.694.366.694l4.517 1.428a.506.506 0 0 0 .229-.013c1.026-.63 10.332-6.335 10.873-6.527.083-.024.148 0 .131.061-.215.732-8.257 7.664-8.301 7.706a.16.16 0 0 0-.06.143l-.422 4.28s-.176 1.331 1.196 0a38.082 38.082 0 0 1 2.374-2.11c1.553 1.041 3.224 2.192 3.945 2.794.245.23.576.354.916.342.426-.05.774-.35.876-.754 0 0 3.192-12.471 3.298-14.142.011-.162.025-.268.027-.38.005-.13-.008-.26-.04-.387Z" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-blue-500 hover:text-blue-600 transition duration-150 ease-in-out" href="#0" aria-label="Instagram">
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+    
+                        
+                        <div ></div>
+    
+                    </div>
+    
+                </div>
+            </section>
+            </footer>
+            
+            
+        </main>
+
+
+        
+
+    </div>
+
+    <script src="./js/vendors/alpinejs.min.js" defer></script>
+    <script src="./js/vendors/aos.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
